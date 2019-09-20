@@ -17,28 +17,12 @@ $(function() {
     
     // employee is our 'database'
     let employees = [
-        {
-            'name': 'John',
-            'employee_number': 'E1234567',
-            'duration': 200,
-            'annual_leave': 14,
-            'salary': 3200
-        }, 
-        {
-            'name': 'Alan',
-            'employee_number': 'E2121212',
-            'duration': 720,
-            'annual_leave': 14,
-            'salary': 4500
-        },
-        {
-            'name': 'Cindy',
-            'employee_number': 'E11223344',
-            'duration': 720,
-            'annual_leave': 21,
-            'salary': 4500
-        }];
+        new Employee("John", "E12345678", 200, 14, 3200),
+        new Employee("Alan", "E24780124", 120, 14, 2500),
+        new Employee("Cindy", "E3313123", 720, 21, 3500)
+       ];
     
+    console.log(employees);
     // when the webpage first loaded, we hide
     // all the pages but the first page
     $('.page').hide();
@@ -89,7 +73,7 @@ $(function() {
        {
            if (each_employee.employee_number == employee_number) {
                $('#employee-name').text(each_employee.name);
-               $('#employee-employee-number').text(each_employee.employee_number);
+               $('#employee-number').text(each_employee.employee_number);
                $('#employee-duration').text(each_employee.duration);
                $('#employee-annual-leave').text(each_employee.annual_leave);
                $('#employee-salary').text(each_employee.salary);
@@ -100,13 +84,7 @@ $(function() {
     
     $("#add-new-button").click(function(){
         let new_employee_name = $('#new-employee-name').val();
-        let new_employee_object = {
-            'name': new_employee_name,
-            'employee_number': 'N/A',
-            'duration':'N/A',
-            'annual_leave': 'N/A',
-            'salary': 'N/A'
-        }
+        let new_employee_object = new Employee(new_employee_name, "N/A", "N/A", "N/A", "N/A");
         employees.push(new_employee_object);
         initPageOne();
     })
