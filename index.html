@@ -40,12 +40,19 @@
                 </div>
                 <div class='col'>
                     <h2>Employee Details</h2>
-                    <h3>Name: John</h3>
-                    <h3>Employee Number: E1234567</h3>
-                    <h3>Duration: 200</h3>
-                    <h3>Annual Leave: 14</h3>
-                    <h3>Salary: 3200</h3>
+                    <h3>Name: <span id='employee-name'>John</span></h3>
+                    <h3>Employee Number: <span id='employee-number'>E1234567</span></h3>
+                    <h3>Duration: <span id='employee-duration'>200</span></h3>
+                    <h3>Annual Leave: <span id='employee-annual-leave'>14</span></h3>
+                    <h3>Salary: <span id='employee-salary'>3200</span></h3>
                 </div>
+            </div>
+            <div class='form'>
+                <div class='form-group'>
+                    <input type='text' placeholder='name' class='form-control' id='new-employee-name'/>    
+                </div>
+                
+                <button class='btn btn-primary' id='add-new-button'>Add New Employee</button>
             </div>
         </section>
 

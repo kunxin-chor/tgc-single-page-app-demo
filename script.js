@@ -20,7 +20,6 @@ $(function() {
         {
             'name': 'John',
             'employee_number': 'E1234567',
-
             'duration': 200,
             'annual_leave': 14,
             'salary': 3200
@@ -36,7 +35,7 @@ $(function() {
             'name': 'Cindy',
             'employee_number': 'E11223344',
             'duration': 720,
-            'annual_leave': 14,
+            'annual_leave': 21,
             'salary': 4500
         }];
     
@@ -86,6 +85,29 @@ $(function() {
        let employee_number= $(this).data('employee-number');
        
        // linear search
+       for (let each_employee of employees)
+       {
+           if (each_employee.employee_number == employee_number) {
+               $('#employee-name').text(each_employee.name);
+               $('#employee-employee-number').text(each_employee.employee_number);
+               $('#employee-duration').text(each_employee.duration);
+               $('#employee-annual-leave').text(each_employee.annual_leave);
+               $('#employee-salary').text(each_employee.salary);
+           }
+       }
     
     });
+    
+    $("#add-new-button").click(function(){
+        let new_employee_name = $('#new-employee-name').val();
+        let new_employee_object = {
+            'name': new_employee_name,
+            'employee_number': 'N/A',
+            'duration':'N/A',
+            'annual_leave': 'N/A',
+            'salary': 'N/A'
+        }
+        employees.push(new_employee_object);
+        initPageOne();
+    })
 })
