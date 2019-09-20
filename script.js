@@ -8,7 +8,7 @@ $(function() {
 
     $('#page-one-link').click(function() {
         $('.page').hide(); // hide all the other pages
-        $('#page-two').show(); // show the page that the user wants to see
+        $('#page-one').show(); // show the page that the user wants to see
     })
 
     $('#page-two-link').click(function() {
